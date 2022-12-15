@@ -24,4 +24,9 @@ public class AccountController {
     public ResponseEntity<Boolean> CreateOrder(@PathVariable String restaurantId, @PathVariable String email) {
         return accountService.CheckAccount(restaurantId, email);
     }
+
+    @GetMapping("/{email}")
+    public ResponseEntity<String> GetRestaurantIdByEmail(@PathVariable String email) {
+        return accountService.GetRestaurantIdByEmail(email);
+    }
 }
