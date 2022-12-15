@@ -5,7 +5,7 @@ on:
     branches: ["main"]
 
 env:
-  IMAGE_NAME: tableservice
+  IMAGE_NAME: accountservice
 
 jobs:
   build:
