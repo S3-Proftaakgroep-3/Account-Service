@@ -26,7 +26,7 @@ public class AccountController {
     }
 
     @GetMapping("/{email}")
-    public ResponseEntity<String> GetRestaurantIdByEmail(@PathVariable String email) {
+    public ResponseEntity<Account> GetRestaurantIdByEmail(@PathVariable String email) {
         return accountService.GetRestaurantIdByEmail(email);
     }
 }

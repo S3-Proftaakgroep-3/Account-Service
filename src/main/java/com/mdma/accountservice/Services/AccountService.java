@@ -25,8 +25,8 @@ public class AccountService {
         return new ResponseEntity<>(accountRepository.existsAccountByRestaurantIdAndEmail(restaurantId, lowerEmail), HttpStatus.OK);
     }
 
-    public ResponseEntity<String> GetRestaurantIdByEmail(String email) {
+    public ResponseEntity<Account> GetRestaurantIdByEmail(String email) {
         String lowerEmail = email.toLowerCase();
-        return new ResponseEntity<>(accountRepository.findFirstByEmail(lowerEmail).getRestaurantId(), HttpStatus.OK);
+        return new ResponseEntity<>(accountRepository.findFirstByEmail(lowerEmail), HttpStatus.OK);
     }
 }
