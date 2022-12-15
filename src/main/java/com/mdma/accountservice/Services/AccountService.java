@@ -23,6 +23,10 @@ public class AccountService {
     public ResponseEntity<Boolean> CheckAccount(String restaurantId, String email) {
         String lowerEmail = email.toLowerCase();
         return new ResponseEntity<>(accountRepository.existsAccountByRestaurantIdAndEmail(restaurantId, lowerEmail), HttpStatus.OK);
+    }
 
+    public ResponseEntity<String> GetRestaurantIdByEmail(String email) {
+        String lowerEmail = email.toLowerCase();
+        return new ResponseEntity<>(accountRepository.findFirstByEmail(lowerEmail).getRestaurantId(), HttpStatus.OK);
     }
 }
